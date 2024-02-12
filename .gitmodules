@@ -1,0 +1,6 @@
+[submodule "taskage-client"]
+	path = taskage-client
+	url = https://github.com/urluconceptual/taskage-client
+[submodule "taskage-core"]
+	path = taskage-core
+	url = https://github.com/urluconceptual/taskage-core
