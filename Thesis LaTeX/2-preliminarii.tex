@@ -1,7 +1,76 @@
 \chapter{Preliminarii}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim metus justo, nec pharetra mauris tincidunt id. Praesent semper turpis quis faucibus pulvinar. Fusce ut justo nisi. Praesent vehicula blandit erat, sed dignissim justo bibendum lobortis. Vivamus fringilla, elit at pulvinar imperdiet, dui elit lobortis sapien, et vehicula urna ex et velit. Sed efficitur, neque sed egestas lobortis, diam leo pellentesque sem, nec gravida est nunc efficitur orci. Maecenas bibendum pharetra sapien, quis porttitor justo vestibulum a. Nunc tempus erat sed augue blandit, eu scelerisque dolor lobortis. Vestibulum quam arcu, malesuada quis felis eleifend, iaculis gravida massa. Vestibulum lacinia arcu nec risus laoreet porttitor. Quisque ut nisl consequat, sodales nisl id, pretium neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus tincidunt, ligula in fringilla laoreet, urna risus efficitur orci, eget pellentesque metus magna interdum lorem.
+\section{Funcționalități principale}
+\subsection{Actori}
+Principalii actori ai cazurilor de utilizare sunt: 
 
-Quisque et ligula erat. Aliquam eget fringilla tortor. Nulla maximus, massa ac consectetur fringilla, ante velit porttitor justo, et euismod magna eros consequat nunc. Praesent lacinia nulla dui, lobortis mattis odio ullamcorper et. Proin vehicula massa in efficitur eleifend. Mauris ornare mi ac rutrum porta. Morbi sed magna vel sem egestas malesuada ac at turpis. Aenean eleifend pharetra massa, eget porta ligula eleifend ultricies. Donec vel imperdiet leo. Nullam commodo metus metus, sed semper velit ornare posuere.
+- Manager
 
-Aliquam erat volutpat. Pellentesque vulputate massa sed semper lacinia. Duis hendrerit dolor et blandit malesuada. Curabitur posuere tellus at lacinia scelerisque. Donec hendrerit semper ullamcorper. Morbi ut semper metus. Aliquam pharetra sagittis dolor, non pulvinar purus euismod non. Phasellus condimentum a est tristique convallis. Nam ac mauris bibendum, lobortis ex at, rhoncus nibh. Fusce neque nisi, dignissim porttitor lorem sed, lobortis vehicula felis.
+- Employee
+
+- Administrator
+
+\subsection{Cazuri uzuale de utilizare}
+\begin{itemize}
+\item Manager:
+
+1. În calitate de manager, aș vrea să adaug sarcini de lucru pentru echipa mea, cu detalii despre criteriile de acceptanță, prioritate, dificultate și termen limită, pentru ca acestea să fie cât mai clare pentru membri echipei.
+
+2. În calitate de manager, aș vrea să pot vizualiza factorii de performanță precum disponibilitatea, volumul de muncă, calificarea, eficiența și atribuțiile fiecărui membru al echipei mele, pentru a evalua corect atribuirea de sarcini de lucru noi.
+
+3. În calitate de manager, aș vrea să pot modifica factorii de performanță precum disponibilitatea, volumul de muncă, calificarea, eficiența și atribuțiile fiecărui membru al echipei mele, pentru ca aceștia să fie mereu actuali.
+
+4. În calitate de manager, aș vrea să atribui automat sarcini de lucru, bazat pe detaliile sarcinii de lucru și pe factorii de performanță angajatului, pentru a le împărți cât mai echitabil și a maximiza productivitatea și șansele ca sarcina să fie îndeplinită până la
+termen.
+
+5. În calitate de manager, aș vrea să pot atribui manual sarcini de lucru, bazat pe analiza mea asupra situației, pentru a ajusta eventualele erori ale recomandărilor, a adapta panoul la noi informații relative la disponibilitate, sau a încuraja creșterea/scăderea productivității pentru un anumit membru al echipei
+
+\item Employee:
+
+1. În calitate de angajat obișnuit, aș vrea să îmi vizualizez sarcinile de lucru împreuna cu detalii despre criteriile de acceptanță, prioritate, dificultate și termen limită, pentru a îmi putea organiza activitatea zilnică.
+
+2. În calitate de angajat obișnuit, aș vrea să pot actualiza statusul sarcinilor de lucru pentru ca managerul meu să le cunoască progresul.
+
+3. În calitate de angajat obișnuit, aș vrea să fiu notificat atunci când managerul îmi atribuie o sarcina de lucru nouă, pentru a percepe mai ușor schimbări ale panoului cu sarcinile mele.
+
+\item Administrator:
+
+1. În calitate de administrator, aș vrea să pot crea, actualiza sau elimina utilizatori și echipe, pentru a putea gestiona accesul la platformă și organizarea internă.
+
+2. În calitate de administrator, aș vrea să pot atribui manageri echipelor create, pentru ca fiecare echipă să fie gestionată de un manager.
+
+\end{itemize}
+
+
+\section{Utilizarea tehnologiilor}
+
+\subsection{Typescript\&React}
+
+Pentru partea de front-end a aplicației web am ales să utilizez Typescript ca limbaj și React ca bibliotecă, împreună cu componente reutilizabile din biliboteca de componente UI Ant Design.
+
+Utilizarea limbajului Typescript, în defavoarea limbajului JavaScript, este explicată prin minimizarea erorilor cauzate de inconsistența adusă de faptul ca JavaScript este un limbaj „loosely typed” („dinamically typed”) și de incertitudinea adusă de acest fapt. Astfel, prezența interfețelor și tipurilor de date bine stabilite facilitează dezvoltarea rapidă și stabilă.
+
+În plus, biblioteca React aduce o perspectivă structurată dezvoltării interfeței, prin definirea de componente reutilizabile în cadrul aplicației. O parte din componentele UI sunt utilizate din biblioteca Ant Design, folositoare prin aspectul vizual unitar și formal, acompaniat de o documentație bine pusă la punct. Un dezavantaj al abordării prin componente este comunicarea între acestea, motiv pentru care am folosit state managerul MobX. 
+
+\subsection{Java\&Spring}
+Pentru partea de back-end a aplicației web am optat pentru limbajul Java și framework-ul Spring și ecosistemul acestuia, având în vedere opțiunile robuste pentru gestionarea logicii de afaceri, a securității și a interacțiunilor cu baza de date.
+
+Versiunea de Java utilizată este Java 21, pentru a avea acces la cele mai noi update-uri ale limbajului, cu cele mai noi feature-uri, precum clase Record, fire virtuale de execuție, și Sequenced Collections. 
+
+Versiunea de Spring folosită este 6.1.3, ce vine împreună cu Spring Boot 3.2.2, alături de alte dependințe, printre cele mai notabile numărându-se Spring Security și Jakarta Persistence API (JPA).
+
+Cele mai majore utilități puse la dispoziție de Spring și de ecosistemul de dependințe sunt:
+
+- securitatea asigurată prin generarea de JSON Web Tokens pentru autentificarea și autorizarea utilizatorilor și a cererilor HTTP trimise;
+
+- crearea tabelelor și conectarea la baza de date facilitată de ORM-ul JPA;
+
+- injectarea dependințelor prin constructorii claselor, în scopul reducerii codului boilerplate.
+
+\subsection{PostgreSQL}
+
+Pentru baza de date, am ales PostgreSQL pentru potențialul de scalabilite, și are în vedere  integritatea datelor, mai presus de tot, fapt foarte important pentru antrenarea modelului de inteligență artificală folosit.
+
+\section{Stuctura aplicației}
+
+[de adaugat si descris structura fisierelor dupa ce e finalizata]
