@@ -30,13 +30,26 @@ Apelurile HTTP conțin un JWT token în header și trec prin filtrul de autoriza
 
 Dacă DTO-ul a fost validat, acesta este trimis mai departe pentru procesare în zona cu logica de afaceri a aplicației, și anume serviciile. Serviciile procesează informația și eventual o mapează ca entități JPA spre a o transmite mai departe depozitelor(repositories). Depozitele reprezintă stratul de acces al datelor și se ocupă cu toate interacțiunile cu baza de date. Dacă totul se realizează cu succes, se va returna o entitate de răspuns cu statusul HTTP 200, eventual conținând un Response DTO cu datele cerute. Dacă se aruncă vreo excepție, aceasta va fi prinsă de clasa care se ocupă cu gestiunea erorilor la nivel global, GlobalExceptionHandler, și se va trimite înapoi un răspuns sugestiv.
 
+\section{taskage-db}
+
+ \begin{figure}[ht]
+	\centering
+ 	 \includegraphics[width=0.7\linewidth]{taskage-db.png}
+	\caption{Diagrama bazei de date}
+	\label{taskage-db}
+ \end{figure}
+
+Nu numai interacțiunea cu baza de date este gestionată de Spring JPA, ci și schema acesteia, prin utilizarea unor configurări specifice. Astfel, fiecare clasă adnotată „@Entity” devine un tabel din diagrama 3.3, prin intermediul instrumentului de persistare a datelor Hibernate și al metadatelor oferite prin adnotări.
+
+Tabela „app_users” are câmpul special „auth_role” care poate lua una din valorile „ROLE_BASIC”(asociat membrilor normali ai unei echipe), „ROLE_MANAGER”(asociat managerilor echipelor) și „ROLE_ADMIN”(asociat administratorului paginii), urmând formatul înțeles de Spring Security. Speciale mai sunt tabelele de tip dicționar „priorities” și „statuses”, care nu implementează operații CRUD, ci servesc la stocarea unor date care altfel ar fi fost stocate în structuri de tip enum. Această alegere ajută la organizarea eficientă a codului și permite manevrarea mai ușoară a valorilor, putând fi chiar și actualizate la runtime.
+
 \section{taskage-client}
 
 Componenta care constituie front-end-ul aplicației este taskage-client. Aceasta este un proiect React care folosește MobX pentru gestionarea stării. Una din provocările principale la construcția unui proiect în React este lipsa de structură interentă tehnologiei. Prin comparație cu un framework popular, Angular, proiectele React nu au o structură de fișiere și un flux de date bine-definite, acestea rămânând responsabilitatea dezvoltatorului. Cele două mari abordări pentru structurarea aplicației sunt: abordarea orientată pe cateogorie și abordarea orientată spre funcționalitate. Prima din cele două este mai puțin scalabilă, organizând fișierele după tipul lor(componente, pagini, modele, etc...) în timp ce a doua abordare rafinează mai departe structura, sortând componentele în funcție de funcționalitatea efectivă pe care o implementează. Am ales cea de-a doua alternativă pentru că densitatea componentelor devenise prea mare pentru a putea fi gestionate la un loc.
 
  \begin{figure}[ht]
 	\centering
- 	 \includegraphics[width=0.4\linewidth]{FE-folder-structure.png}
+ 	 \includegraphics[width=0.3\linewidth]{FE-folder-structure.png}
 	\caption{Structura de fișiere a aplicației React}
 	\label{FE-folder-structure}
  \end{figure}
