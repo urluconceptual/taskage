@@ -4,3 +4,6 @@
 [submodule "taskage-core"]
 	path = taskage-core
 	url = https://github.com/urluconceptual/taskage-core
+[submodule "taskage-gateway"]
+	path = taskage-gateway
+	url = https://github.com/urluconceptual/taskage-gateway
