@@ -7,3 +7,6 @@
 [submodule "taskage-gateway"]
 	path = taskage-gateway
 	url = https://github.com/urluconceptual/taskage-gateway
+[submodule "taskage-helper"]
+	path = taskage-helper
+	url = https://github.com/urluconceptual/taskage-helper
