@@ -53,32 +53,49 @@
 
 % Include funcțiile de grafică
 \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multirow}
 % Încarcă imaginile din directorul `images`
 \graphicspath{{./images/}}
 
 % Listări de cod
 \usepackage{listings}
 \usepackage{color}
+\usepackage{svg}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\lstset{frame=tb,
-  language=Java,
+\lstdefinestyle{yaml}{
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
   basicstyle={\small\ttfamily},
-  numbers=none,
   numberstyle=\tiny\color{gray},
   keywordstyle=\color{blue},
   commentstyle=\color{dkgreen},
   stringstyle=\color{mauve},
   breaklines=true,
   breakatwhitespace=true,
-  tabsize=3
+  tabsize=2
+}
+
+\lstdefinestyle{java}{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2
 }
 
 % Linkuri interactive în PDF
@@ -96,6 +113,9 @@
 % Comenzi matematice
 \usepackage{amsmath}
 \usepackage{mathtools}
+
+%figures
+\usepackage{float}
 
 % Formule matematice
 \newcommand{\bigO}[1]{\symcal{O}\left(#1\right)}
